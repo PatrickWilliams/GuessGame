@@ -1,0 +1,59 @@
+<html>
+  	<head>
+    		<title>
+		Guessing Game
+    		</title>
+    
+		<link rel = "stylesheet" type = "text/css" href= "/stylesheets/guessstyle.css">
+ 	</head>
+  	<body>
+    		<h1> Guessing Game</h1>
+		<hr> Your range is : <%= min%> - <%= max%> .</hr>
+
+
+		<table border = "3">  
+
+
+		<tr>
+			<th> Guess number</th>
+			<th> Guesses left</th>
+		</tr>
+
+		<tr>
+  			<td><b><%= count%></b></td> 
+  			<td><b><%= left%></b></td>
+		</tr>
+
+		<table border = "2">
+
+		<tr>
+  			<th> Guess</th>
+  			<th> Answer</th>
+		</tr>
+
+		<%    
+			var i = 1;
+			for(i = 1; i < guessarray.length; i++){
+
+		%>
+
+		<tr>
+  			<td><b><%=guessarray[i]%></b></td> 
+  			<td><b><%=suggestion[i]%></b></td>
+		</tr>
+
+
+		<% } %>
+
+
+		<hr>
+  			<form method = 'post' action = '/guess'>
+   				 <span> Enter Next Number </span>
+    				 <input type= 'number' name='userguess'>
+    				 <input type= 'submit' value = 'Guess now'/> 
+    			</form>
+		</hr>
+
+	</body>
+</html>
+

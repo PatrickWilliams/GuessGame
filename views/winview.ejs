@@ -1,0 +1,45 @@
+<html>
+  	<head>
+ 		<title> YOU WIN 
+        	</title>
+        		<link rel="stylesheet" text="text/css" href="/stylesheets/winstyle.css">
+  	</head>
+ 
+	<body>
+		<h1> YOU WON!!!!! </h1>
+
+		<p> The computer had guessed <%= computerGuess %> and you got it!
+		<h4> Heres a list of your choices.</h4>
+
+		<table border = "2">
+		<tr> 
+   			<th><b>User's Guess </b></th>
+   			<th><b>Suggestion </b></th>
+		<tr>
+
+		<%
+			var i = 1;
+			for ( i = 1; i < guessarray.length; i++ ) {
+
+		%>
+
+		<tr>
+   			<td><b> <%=guessarray[i]%></b></td>
+   			<td><b> <%=suggestion[i]%></b></td>
+		</tr>
+
+
+		<% } %>
+
+		<hr>
+  			<form method = 'get' action = '/'>
+     				<span> Play Again? </span>
+     				<input type = 'submit' value = 'Begin Again'/>
+  			</form>
+		<hr>
+
+		<address> Made 07.01.13 <br>
+   		   by Patrick Williams.</adress>
+
+	</body>
+</html>

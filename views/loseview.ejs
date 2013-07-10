@@ -1,0 +1,46 @@
+<html>
+  	<head>
+ 		<title> YOU LOSE </title>
+        
+		<link rel="stylesheet" text="text/css" href="/stylesheets/losestyle.css">
+  	</head>
+ 
+	<body>
+		<h1> <b>YOU LOSE</b> </h1>
+
+		<p> The computer had guessed <%= computerGuess %> and you didn't get it. Sorry.
+		<h4> Here's a list of your choices.</h4>
+
+		<table border = "3">
+
+		<tr>
+			<th><b> User's Guess </b></th>
+			<th><b> Suggestion </b></th>
+		<tr>
+
+		<%
+			var i = 1;
+	 		for ( i = 1; i < guessarray.length; i++){
+
+		%>
+
+		<tr>
+   			<td><b><%=guessarray[i]%></b></td>
+   			<td><b><%=suggestion[i]%></b></td>
+		<tr>
+
+		<% } %>
+
+
+		<hr>
+  			<form method = 'get' action = '/'>
+    				<span> Play Again? </span>
+    				<input type = 'submit' value = 'Begin Again'/>
+  			</form>
+		<hr>
+
+		<address> Made 07.01.13 <br>
+   		    by Patrick Williams.</address>
+
+	</body>
+</html>
